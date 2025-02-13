@@ -1,0 +1,26 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='restaurant.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h2>Login</h2>
+        {% if mesage is defined and mesage %}
+             <div class="alert">{{ mesage }}</div>
+        {% endif %}
+        <form method="post" action="/new">
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="checkbox" id="rememberme" name="rememberme">
+            <label for="rememberme">Remember me</label><br>
+            <input type="submit" value="Login">
+        </form>
+
+
+
+        <p>Don't have an account? <a href="/">Signup</a></p>
+
+    </div>
+</body>

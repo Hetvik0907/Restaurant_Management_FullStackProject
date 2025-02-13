@@ -1,0 +1,24 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='signup.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h2>Signup</h2>
+         {% if mesage is defined and mesage %}
+             <div class="alert">{{ mesage }}</div>
+        {% endif %}
+        <form method="post" action="/new1">
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="confirmpassword">Confirm Password:</label><br>
+            <input type="password" id="confirmpassword" name="confirmpassword" required><br>
+            <input type="checkbox" id="rememberme" name="rememberme">
+            <label for="rememberme">Remember me</label><br>
+            <input type="submit" value="Signup">
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+</body>
